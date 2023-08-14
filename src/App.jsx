@@ -2,7 +2,13 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [usuario, setUsuario] = useState("")
+
+  function handleUsuario(evento) {
+    setUsuario(evento.target.value)
+  }
+
+  console.log(usuario)
 
   return (
     <>
@@ -13,10 +19,8 @@ function App() {
     <main>
       <form action="">
         <div>
-          <label htmlFor="usuario">
-            Usuário
-            </label>
-          <input type="text" id="usuario" placeholder="Digite seu usuario"/>
+          <label htmlFor="usuario">Usuário</label>
+          <input type="text" id="usuario" placeholder="Digite seu usuario" onChange={handleUsuario}/>
         </div>
         <div>
         <label htmlFor="senha">Senha</label>
